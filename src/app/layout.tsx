@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google"; // Importando a fonte
 import "./globals.css";
 
-// Configurando a Montserrat com os pesos que usaremos (400, 700 e 900)
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
