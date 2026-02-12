@@ -1,8 +1,8 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  output: 'standalone', // Essencial para o Docker
 };
 
 export default nextConfig;
