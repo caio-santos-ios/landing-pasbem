@@ -671,7 +671,7 @@ function Contato() {
 
           {/* Form */}
           <div className="reveal" style={{ transitionDelay: "0.2s" }}>
-            <div className="rounded-3xl p-8" style={{ background: "#E8F8F4" }}>
+            {/* <div className="rounded-3xl p-8" style={{ background: "#E8F8F4" }}>
               <h3 className="text-xl font-bold mb-6" style={{ color: "#1A3557" }}>Quero saber mais sobre o Pasbem</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 {[
@@ -700,7 +700,7 @@ function Contato() {
                   {submitted ? "✓ Mensagem enviada!" : "Enviar mensagem →"}
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
