@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 /* ─────────────────────────────────────────────
-   Global styles injected once via <style> tag
+  Global styles injected once via <style> tag
 ───────────────────────────────────────────── */
 const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
@@ -195,7 +195,6 @@ function Hero() {
             </div>
           </div>
 
-          {/* Card */}
           <div className="hidden lg:flex justify-end">
             <div className="relative w-full max-w-md">
               <div className="rounded-3xl p-8 shadow-2xl" style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}>
@@ -215,7 +214,7 @@ function Hero() {
                     { name: "Bem Vital", sub: "Scores IPV, IGS, IGN, IES", color: "#fb923c", badgeStyle: { background: "rgba(251,146,60,0.2)", color: "#fdba74" }, icon: <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg> },
                   ].map((m) => (
                     <div key={m.name} className="rounded-2xl p-4 flex items-center gap-4" style={{ background: "rgba(255,255,255,0.1)" }}>
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: m.color }}>
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: m.color }}>
                         {m.icon}
                       </div>
                       <div>
@@ -563,7 +562,7 @@ function Comparativo() {
             </div>
           </div>
           {rows.map((r, i) => (
-            <div key={r.label} className="table-row grid grid-cols-3" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+            <div key={r.label} className="grid grid-cols-3" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
               <div className="p-5"><span className="text-white font-semibold text-sm">{r.label}</span></div>
               <div className="p-5 text-center"><span className="text-sm" style={{ color: "#f87171" }}>{r.bad}</span></div>
               <div className="p-5 text-center"><span className="font-semibold text-sm" style={{ color: "#3DBD9B" }}>{r.good}</span></div>
@@ -656,7 +655,7 @@ function Contato() {
                 <a key={c.title} href={c.href} target="_blank" rel="noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl card-hover transition"
                   style={{ background: c.bg, border: `1px solid ${c.border}` }}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: c.iconBg }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: c.iconBg }}>
                     {c.icon}
                   </div>
                   <div>
