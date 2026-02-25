@@ -211,13 +211,13 @@ function Hero() {
                     { name: "Multibem", sub: "Bem Card – crédito saúde", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-muilt.png" },
                     { name: "Bem Vital", sub: "Scores IPV, IGS, IGN, IES", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-vital.png" },
                   ].map((m) => (
-                    <div key={m.name} className="rounded-2xl p-4 flex items-center gap-4" style={{ background: "rgba(255,255,255,0.1)" }}>
-                      <div className="w-35 h-35 rounded-lg flex items-center justify-center shrink-0" style={{  }}>
+                    <div key={m.name} className="rounded-2xl p-4 flex items-center gap-4" style={{ background: "oklch(96.7% 0.003 264.542)" }}>
+                      <div className="w-40 h-40 rounded-lg flex items-center justify-center shrink-0" style={{  }}>
                         <img className="object-contain" src={m.icon} alt="" />
                       </div>
                       <div>
-                        <div className="text-white text-sm font-semibold">{m.name}</div>
-                        <div className="text-white/50 text-xs">{m.sub}</div>
+                        <div className="text-black text-sm font-semibold">{m.name}</div>
+                        <div className="text-black/50 text-xs">{m.sub}</div>
                       </div>
                       <div className="ml-auto pill text-xs px-2 py-1" style={m.badgeStyle}>Ativo</div>
                     </div>
@@ -319,7 +319,7 @@ function ModuloBemCuidado() {
       </div>
       <div className="order-1 lg:order-2 flex justify-center">
         <div className="relative">
-          <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "linear-gradient(135deg, #3DBD9B, #0D7B6B)", boxShadow: "0 20px 60px rgba(61,189,155,0.3)" }}>
+          <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "oklch(96.7% 0.003 264.542)", boxShadow: "0 20px 60px rgba(61,189,155,0.3)" }}>
             <div className="text-center">
               <img className="object-contain" src="/bem-cuidado.png" alt="" />
 
@@ -348,7 +348,7 @@ function ModuloBemPapo() {
     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 reveal">
       <div className="flex justify-center">
         <div className="relative">
-          <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "linear-gradient(135deg, #3b82f6, #4f46e5)", boxShadow: "0 20px 60px rgba(79,70,229,0.3)" }}>
+          <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "oklch(96.7% 0.003 264.542)", boxShadow: "0 20px 60px rgba(79,70,229,0.3)" }}>
             <div className="text-center">
               <img className="object-contain" src="/bem-papo.png" alt="" />
 
