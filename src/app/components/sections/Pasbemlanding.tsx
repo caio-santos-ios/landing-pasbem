@@ -429,8 +429,8 @@ function ModuloMultibem() {
               </div>
             </div> 
               */}
-            <div className="text-center text-white font-semibold text-sm">Concierge Pasbem</div>
-            <div className="text-center text-white text-xs mt-1">Agendamento e suporte personalizado</div>
+            <div className="text-center text-white font-semibold text-sm">Bem Card</div>
+            {/* <div className="text-center text-white text-xs mt-1">Agendamento e suporte personalizado</div> */}
           </div>
         </div>
       </div>
