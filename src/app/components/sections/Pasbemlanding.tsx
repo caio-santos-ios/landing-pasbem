@@ -104,9 +104,7 @@ function Navbar() {
     <nav className={`pasbem-navbar fixed top-0 left-0 right-0 z-50 bg-transparent ${scrolled ? "scrolled" : ""}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
-            <img className="h-20" src="/logo.png" alt="logo" />
-          {/* <PasbemLogo size={40} /> */}
-          {/* <span className="text-white font-bold text-xl tracking-wide">Pasbem</span> */}
+          <img className="h-20" src="/logo.png" alt="logo" />
         </a>
 
         {/* Desktop */}
@@ -196,7 +194,7 @@ function Hero() {
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-xl">
               <div className="rounded-3xl p-8 shadow-2xl" style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(61,189,155,0.3)" }}>
@@ -208,14 +206,14 @@ function Hero() {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { name: "Bem + Cuidado", sub: "Telemedicina 24h", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-                    { name: "Bem + Papo", sub: "Saúde mental", color: "#60a5fa", badgeStyle: { background: "rgba(96,165,250,0.2)", color: "#93c5fd" }, icon: <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg> },
-                    { name: "Multibem", sub: "Bem Card – crédito saúde", color: "#c084fc", badgeStyle: { background: "rgba(192,132,252,0.2)", color: "#d8b4fe" }, icon: <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg> },
-                    { name: "Bem Vital", sub: "Scores IPV, IGS, IGN, IES", color: "#fb923c", badgeStyle: { background: "rgba(251,146,60,0.2)", color: "#fdba74" }, icon: <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg> },
+                    { name: "Bem + Cuidado", sub: "Telemedicina 24h", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-cuidado.png" },
+                    { name: "Bem + Papo", sub: "Saúde mental", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-papo.png" },
+                    { name: "Multibem", sub: "Bem Card – crédito saúde", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-muilt.png" },
+                    { name: "Bem Vital", sub: "Scores IPV, IGS, IGN, IES", color: "#3DBD9B", badgeStyle: { background: "rgba(61,189,155,0.2)", color: "#3DBD9B" }, icon: "/bem-vital.png" },
                   ].map((m) => (
                     <div key={m.name} className="rounded-2xl p-4 flex items-center gap-4" style={{ background: "rgba(255,255,255,0.1)" }}>
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: m.color }}>
-                        {m.icon}
+                      <div className="w-35 h-35 rounded-lg flex items-center justify-center shrink-0" style={{  }}>
+                        <img className="object-contain" src={m.icon} alt="" />
                       </div>
                       <div>
                         <div className="text-white text-sm font-semibold">{m.name}</div>
@@ -280,11 +278,13 @@ function Problemas() {
         <div className="grid md:grid-cols-3 gap-8">
           {problems.map((p, i) => (
             <div key={p.title} className="reveal card-hover rounded-3xl p-8 border border-gray-100" style={{ background: p.bg, transitionDelay: `${i * 0.15}s` }}>
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: p.iconBg, color: p.iconColor }}>
-                {p.icon}
+              <div className="text-center h-14 rounded-2xl flex items-center justify-center mb-6">
+                <span className="h-14 rounded-2xl flex items-center justify-center mb-6 p-4" style={{ background: p.iconBg, color: p.iconColor }}>
+                  {p.icon}
+                </span>
               </div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: "#1A3557" }}>{p.title}</h3>
-              <p className="text-gray-500 leading-relaxed">{p.desc}</p>
+              <h3 className="text-xl text-center font-bold mb-3" style={{ color: "#1A3557" }}>{p.title}</h3>
+              <p className="text-gray-500 text-center leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -321,9 +321,11 @@ function ModuloBemCuidado() {
         <div className="relative">
           <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "linear-gradient(135deg, #3DBD9B, #0D7B6B)", boxShadow: "0 20px 60px rgba(61,189,155,0.3)" }}>
             <div className="text-center">
-              <div className="text-white text-6xl font-black">24h</div>
+              <img className="object-contain" src="/bem-cuidado.png" alt="" />
+
+              {/* <div className="text-white text-6xl font-black">24h</div>
               <div className="text-white/80 text-sm font-medium mt-2">Todo dia, o ano todo</div>
-              <div className="mt-4 rounded-xl px-4 py-2 text-white text-xs font-semibold" style={{ background: "rgba(255,255,255,0.2)" }}>Médico online agora</div>
+              <div className="mt-4 rounded-xl px-4 py-2 text-white text-xs font-semibold" style={{ background: "rgba(255,255,255,0.2)" }}>Médico online agora</div> */}
             </div>
           </div>
           <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg px-4 py-3 text-xs font-bold" style={{ color: "#1A3557" }}>✓ Sem triagem</div>
@@ -348,11 +350,13 @@ function ModuloBemPapo() {
         <div className="relative">
           <div className="w-72 h-72 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: "linear-gradient(135deg, #3b82f6, #4f46e5)", boxShadow: "0 20px 60px rgba(79,70,229,0.3)" }}>
             <div className="text-center">
-              <svg className="w-20 h-20 text-white mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <img className="object-contain" src="/bem-papo.png" alt="" />
+
+              {/* <svg className="w-20 h-20 text-white mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
               <div className="text-white font-bold text-lg">Bem + Papo</div>
-              <div className="text-white/70 text-xs mt-1">Saúde mental como prioridade</div>
+              <div className="text-white/70 text-xs mt-1">Saúde mental como prioridade</div> */}
             </div>
           </div>
           <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-lg px-4 py-3 text-xs font-bold" style={{ color: "#3b82f6" }}>4 sessões/mês</div>
@@ -392,9 +396,9 @@ function ModuloMultibem() {
         <div className="grid grid-cols-2 gap-4 mb-6">
           {cards.map((c) => (
             <div key={c.title} className="bg-white rounded-2xl p-4 border border-gray-100">
-              <div className="text-2xl mb-2">{c.emoji}</div>
-              <div className="font-bold text-sm" style={{ color: "#1A3557" }}>{c.title}</div>
-              <div className="text-gray-500 text-xs mt-1">{c.sub}</div>
+              <div className="text-4xl mb-2 text-center">{c.emoji}</div>
+              <div className="font-bold text-sm text-center" style={{ color: "#1A3557" }}>{c.title}</div>
+              <div className="text-gray-500 text-xs mt-1 text-center">{c.sub}</div>
             </div>
           ))}
         </div>
@@ -404,9 +408,12 @@ function ModuloMultibem() {
       </div>
       <div className="order-1 lg:order-2 flex justify-center">
         <div className="relative">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 w-80 border border-gray-100">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 w-100 border border-gray-100" style={{ background: "linear-gradient(135deg, #1A3557, #0D7B6B)" }}>
+            <img className="object-contain h-90 w-90" src="/bem-card.png" alt="" />
+
             {/* Bem Card visual */}
-            <div className="rounded-2xl p-6 text-white shadow-xl mb-6" style={{ background: "linear-gradient(135deg, #1A3557, #0D7B6B)" }}>
+            {/* 
+            <div className="rounded-2xl p-6 text-white shadow-xl mb-6" >
               <div className="flex justify-between items-start mb-8">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full" style={{ background: "rgba(255,255,255,0.3)" }} />
@@ -420,9 +427,10 @@ function ModuloMultibem() {
                 <div><div className="text-xs opacity-60">Crédito mensal</div><div className="font-bold">R$ 250,00</div></div>
                 <div><div className="text-xs opacity-60">Validade</div><div className="font-bold">12/27</div></div>
               </div>
-            </div>
-            <div className="text-center font-semibold text-sm" style={{ color: "#1A3557" }}>Concierge Pasbem</div>
-            <div className="text-center text-gray-500 text-xs mt-1">Agendamento e suporte personalizado</div>
+            </div> 
+              */}
+            <div className="text-center text-white font-semibold text-sm">Concierge Pasbem</div>
+            <div className="text-center text-white text-xs mt-1">Agendamento e suporte personalizado</div>
           </div>
         </div>
       </div>
@@ -500,11 +508,11 @@ function Modulos() {
 function Diferenciais() {
   const items = [
     { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Acesso Imediato", desc: "Médico em minutos, 24h por dia. Sem filas, sem triagem robótica, sem espera desnecessária.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-    { bg: "#eff6ff", iconBg: "#3b82f6", title: "Liberdade Total", desc: "Sem redes credenciadas restritivas. Use o Bem Card em qualquer médico, clínica, laboratório ou farmácia.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg> },
-    { bg: "#f5f3ff", iconBg: "#8b5cf6", title: "Cuidado Preditivo", desc: "Gestão ativa da saúde com scores personalizados que antecipam problemas antes que o corpo adoeça.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg> },
-    { bg: "#fff7ed", iconBg: "#f97316", title: "Bem-Estar Integral", desc: "Crédito para consultas, exames, medicamentos, academias, pilates, crossfit e muito mais — em um só lugar.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg> },
-    { bg: "#f0fdfa", iconBg: "#14b8a6", title: "Concierge Pessoal", desc: "Uma assistente dedicada cuida de todo o agendamento — sua única tarefa é cuidar da sua saúde.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg> },
-    { bg: "#fff1f2", iconBg: "#fb7185", title: "Sem Carência", desc: "Acesse todos os benefícios imediatamente. Sem períodos de carência, sem surpresas no bolso.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
+    { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Liberdade Total", desc: "Sem redes credenciadas restritivas. Use o Bem Card em qualquer médico, clínica, laboratório ou farmácia.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg> },
+    { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Cuidado Preditivo", desc: "Gestão ativa da saúde com scores personalizados que antecipam problemas antes que o corpo adoeça.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg> },
+    { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Bem-Estar Integral", desc: "Crédito para consultas, exames, medicamentos, academias, pilates, crossfit e muito mais — em um só lugar.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg> },
+    { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Concierge Pessoal", desc: "Uma assistente dedicada cuida de todo o agendamento — sua única tarefa é cuidar da sua saúde.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg> },
+    { bg: "#E8F8F4", iconBg: "#3DBD9B", title: "Sem Carência", desc: "Acesse todos os benefícios imediatamente. Sem períodos de carência, sem surpresas no bolso.", icon: <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
   ];
 
   return (
@@ -519,11 +527,13 @@ function Diferenciais() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, i) => (
             <div key={item.title} className="reveal card-hover rounded-3xl p-8" style={{ background: item.bg, transitionDelay: `${i * 0.1}s` }}>
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: item.iconBg }}>
-                {item.icon}
+              <div className="w-full h-12 flex items-center justify-center mb-5">
+                <span className="text-center p-4 rounded-2xl" style={{ background: item.iconBg }}>
+                  {item.icon}
+                </span>
               </div>
-              <h4 className="text-lg font-bold mb-2" style={{ color: "#1A3557" }}>{item.title}</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              <h4 className="text-lg text-center font-bold mb-2" style={{ color: "#1A3557" }}>{item.title}</h4>
+              <p className="text-gray-600 text-center text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -539,7 +549,7 @@ function Comparativo() {
     { label: "Tempo de Espera", bad: "Filas para consultas e exames", good: "Atendimento 24h, agendamento imediato" },
     { label: "Foco do Cuidado", bad: "Reativo – trata a doença instalada", good: "Preditivo – scores IGS, IGN, IES e IPV" },
     { label: "Saúde Mental", bad: "Raramente coberta ou de difícil acesso", good: "4 sessões/mês com psicólogo incluso" },
-    { label: "Bem-Estar Integral", bad: "Não cobre farmácia, academia ou terapia", good: "Ecossistema 360°: consultas, exames, meds, gym…" },
+    { label: "Bem-Estar Integral", bad: "Não cobre farmácia, academia ou terapia", good: "Ecossistema 360°: consultas, exames, meds, academias, pilates, gym…" },
     { label: "Carência", bad: "Período de carência obrigatório", good: "Acesso imediato – zero carência" },
   ];
   return (
@@ -552,20 +562,22 @@ function Comparativo() {
         </div>
         <div className="rounded-3xl overflow-hidden reveal" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
           {/* Header */}
+
           <div className="grid grid-cols-3" style={{ background: "rgba(255,255,255,0.1)" }}>
-            <div className="p-5 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>Critério</div>
-            <div className="p-5 text-center">
+            <div className="col-span-1 p-5 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>Critério</div>
+            <div className="col-span-1 p-5">
               <span className="inline-block text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(239,68,68,0.2)", color: "#f87171" }}>Mercado Tradicional</span>
             </div>
-            <div className="p-5 text-center">
+            <div className="col-span-1 p-5">
               <span className="inline-block bg-[#3DBD9B] text-white text-xs font-bold px-3 py-1 rounded-full">Pasbem</span>
             </div>
           </div>
+
           {rows.map((r, i) => (
             <div key={r.label} className="grid grid-cols-3" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-              <div className="p-5"><span className="text-white font-semibold text-sm">{r.label}</span></div>
-              <div className="p-5 text-center"><span className="text-sm" style={{ color: "#f87171" }}>{r.bad}</span></div>
-              <div className="p-5 text-center"><span className="font-semibold text-sm" style={{ color: "#3DBD9B" }}>{r.good}</span></div>
+              <div className="col-span-1 p-5"><span className="text-white font-semibold text-sm">{r.label}</span></div>
+              <div className="col-span-1 p-5"><span className="text-sm" style={{ color: "#f87171" }}>{r.bad}</span></div>
+              <div className="col-span-1 p-5"><span className="font-semibold text-sm" style={{ color: "#3DBD9B" }}>{r.good}</span></div>
             </div>
           ))}
         </div>
@@ -593,7 +605,7 @@ function CTA() {
             onMouseLeave={(e) => (e.currentTarget.style.background = "#3DBD9B")}>
             Quero conhecer o Pasbem
           </a>
-          <a href="https://wa.me/558321793390" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/5583999502701" target="_blank" rel="noreferrer"
             className="px-10 py-4 rounded-full font-bold text-lg transition"
             style={{ border: "2px solid #1A3557", color: "#1A3557" }}
             onMouseEnter={(e) => { e.currentTarget.style.background = "#1A3557"; e.currentTarget.style.color = "white"; }}
@@ -621,9 +633,9 @@ function Contato() {
 
   const contactLinks = [
     {
-      href: "https://wa.me/558321793390",
+      href: "https://wa.me/5583999502701",
       bg: "#f0fdf4", border: "#bbf7d0", iconBg: "#22c55e",
-      title: "WhatsApp", sub: "83 2179-3390",
+      title: "WhatsApp", sub: " 83 99950-2701",
       icon: <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>,
     },
     {
@@ -714,8 +726,9 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <PasbemLogo size={32} />
-            <span className="text-white font-bold text-lg">Pasbem</span>
+            {/* <PasbemLogo size={32} /> */}
+            {/* <span className="text-white font-bold text-lg">Pasbem</span> */}
+            <img className="h-10" src="/logo.png" alt="logo" />
             <span className="text-sm ml-2" style={{ color: "rgba(255,255,255,0.4)" }}>Programa Assistencial de Saúde e Bem Estar</span>
           </div>
           <div className="flex gap-6 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -736,7 +749,7 @@ function Footer() {
 /* ─────────── WhatsApp FAB ─────────── */
 function WhatsAppFAB() {
   return (
-    <a href="https://wa.me/558321793390" target="_blank" rel="noreferrer"
+    <a href="https://wa.me/5583999502701" target="_blank" rel="noreferrer"
       className="wa-btn fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-50"
       style={{ background: "#22c55e", boxShadow: "0 8px 30px rgba(34,197,94,0.4)" }}
       title="Falar no WhatsApp">
